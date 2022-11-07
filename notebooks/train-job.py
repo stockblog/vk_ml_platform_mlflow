@@ -1,4 +1,7 @@
 import mlflow
+from mlflow.models.signature import ModelSignature
+from mlflow.types.schema import Schema, ColSpec
+from mlflow.models.signature import infer_signature
 import pandas as pd
 import sklearn
 from sklearn.model_selection import train_test_split
@@ -65,9 +68,23 @@ print(f'Precision: {precision}')
 print(f'Recall: {recall}')
 print(f'F1: {f1}')
 
+input_schema = Schema([
+  ColSpec("double", "age"),
+  ColSpec("string", "sex"),
+  ColSpec("string", "car_class"),
+  ColSpec("double", "driving_experience"),
+  ColSpec("double", "speeding_penalties"),
+  ColSpec("double", "parking_penalties"),
+  ColSpec("double", "total_car_accident")
+])
+output_schema = Schema([ColSpec("long", "has_car_accident")])
+signature = ModelSignature(inputs=input_schema, outputs=output_schema)
+
+
 mlflow.catboost.log_model(model,
                           artifact_path="driver-accident",
-                          registered_model_name="driver-accident")
+                          registered_model_name="driver-accident",
+                          signature=signature)
 
 mlflow.log_artifact("train-job.py")
 mlflow.end_run()
