@@ -8,7 +8,7 @@ from sklearn.metrics import (f1_score, precision_score, recall_score,
                              roc_auc_score)
 from sklearn.model_selection import train_test_split
 
-def main(random_state=0):
+def main(random_state: int = 0):
     # mlflow.set_tracking_uri("https://ml-platform-3b41a7071ab100.ml.msk.vkcs.cloud")
     mlflow.set_experiment(experiment_name="driver_accident")
 

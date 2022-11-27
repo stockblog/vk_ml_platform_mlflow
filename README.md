@@ -5,3 +5,11 @@
 - MLflow API example: `MLflow-API.ipynb`
 - Dataset `driver-stat.parquet`
 - Simple ML job `run_job.py`
+
+## Cloud platform
+[VK Cloud ML platform](https://mcs.mail.ru/docs/ml/mlplatform)
+
+## karpov.courses
+If you want to learn to do production-ready data solutions, come study with us:
+- [Data engineering course](https://karpov.courses/dataengineer)
+- [ML simulator](https://karpov.courses/simulator-ml)
