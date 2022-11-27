@@ -10,6 +10,6 @@
 [VK Cloud ML platform](https://mcs.mail.ru/docs/ml/mlplatform)
 
 ## karpov.courses
-If you want to learn to do production-ready data solutions, come study with us:
+Study with us if you want to learn to do production-ready data solutions:
 - [Data engineering course](https://karpov.courses/dataengineer)
 - [ML simulator](https://karpov.courses/simulator-ml)
