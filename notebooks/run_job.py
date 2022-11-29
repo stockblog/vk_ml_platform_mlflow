@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 def main(random_state: int = 0):
     # mlflow.set_tracking_uri("https://ml-platform-3b41a7071ab100.ml.msk.vkcs.cloud")
-    mlflow.set_experiment(experiment_name="driver_accident")
+    mlflow.set_experiment(experiment_name="driver_accident_demo")
 
     df = pd.read_parquet('driver-stat.parquet')
 
@@ -75,8 +75,8 @@ def main(random_state: int = 0):
         signature = ModelSignature(inputs=input_schema, outputs=output_schema)
 
         mlflow.catboost.log_model(model,
-                                artifact_path="driver_accident",
-                                registered_model_name="driver_accident",
+                                artifact_path="driver_accident_demo",
+                                registered_model_name="driver_accident_demo",
                                 signature=signature)
 
         mlflow.log_artifact("run_job.py")
